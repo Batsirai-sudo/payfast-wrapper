@@ -1,0 +1,65 @@
+{
+    "name": "batsirai/gateway",
+    "description": "A wrapper for payment gateways that you may want to intergrate",
+    "keywords": [
+        "batsirai",
+        "laravel",
+        "payfast",
+        "gateway",
+        "payfast api"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Batsirai\\Gateway\\": "src/"
+        },
+        "files": [
+            "src/Application/Helper/helper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AubreyKodar\\Payfast\\Test\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Batsirai Muchareva",
+            "email": "admin@batsirai.dev",
+            "homepage": "https://batsirai.dev",
+            "role": "Software Engineer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+        "monolog/monolog": "^2.0",
+        "nesbot/carbon": "^2.62.1"
+    },
+    "require-dev": {
+        "phpro/grumphp": "dev-master",
+        "squizlabs/php_codesniffer": "^3.0@dev"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform": {
+            "ext-imap": "1.0.0"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Batsirai\\Gateway\\Application\\Providers\\GatewayServiceProvider"
+            ],
+            "aliases": {
+                "Ppp": "Batsirai\\Gateway\\Domain\\Facades"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
